@@ -1,0 +1,31 @@
+﻿# environments
+.venv/
+venv/
+env/
+*.egg-info/
+
+# data & artifacts
+data/
+datasets/
+results/
+models/
+checkpoints/
+*.parquet
+*.csv
+*.npz
+*.npy
+*.pkl
+*.joblib
+*.bin
+*.onnx
+*.h5
+*.pt
+*.pth
+
+# notebooks caches
+.ipynb_checkpoints/
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+*.log
