@@ -181,9 +181,11 @@ def main():
     out_csv = METRICS / "drift_timeline.csv"
     out.to_csv(out_csv, index=False)
     print(f"[DONE] Wrote {out_csv}")
-    # Save latest model bundle (so you can reuse)
+    # Save latest model bundle 
     joblib.dump({"preprocessor": pre, "selector": sel0, "classifier": clf, "classes_": y_all.cat.categories.tolist()},
                 MODELS / f"drift_{args.target}_{args.mode}.joblib")
 
 if __name__ == "__main__":
     main()
+
+# end of file

@@ -3,7 +3,7 @@
 #  1) Ensures supervised baseline model exists
 #  2) Runs semi-supervised training at given label percentages
 #  3) Extracts Macro-F1 scores from saved reports
-#  4) Saves comparison CSV + generates line plot
+#  4) Saves comparison CSV and generates line plot
 
 import subprocess, sys, json
 from pathlib import Path
@@ -58,7 +58,7 @@ def run_semi(label_pct: int, confidence: float = 0.90, test_size: float = 0.30):
     subprocess.run(cmd, check=True)
 
 def build_csv_and_plot(pcts):
-    """Collect Macro-F1 and produce CSV + comparison plot."""
+    """Collect Macro-F1 and produce CSV & comparison plot."""
     rows = []
 
     # Semi-supervised points
@@ -102,7 +102,7 @@ def build_csv_and_plot(pcts):
     plt.close()
 
 def main():
-    # You can change these if needed
+    # % trained with labels
     pcts = [10, 30, 50, 100]
     confidence = 0.90
     test_size = 0.30
@@ -115,3 +115,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# end of file

@@ -6,6 +6,8 @@
 #   4. Train Decision Tree classifier
 #   5. Evaluate and save model, metrics, and selected features
 
+# Desision Tree used as Random Forest also gave same results.
+
 import time, json
 from pathlib import Path
 
@@ -65,7 +67,7 @@ def main():
 
     y = df["target_binary"].astype(int)
 
-    # Optional: faster dev run
+    # faster dev run
     if args.max_rows and len(df) > args.max_rows:
         frac = args.max_rows / len(df)
         df = (df.groupby(y, group_keys=False)
@@ -168,3 +170,4 @@ if __name__ == "__main__":
     from sklearn.metrics import f1_score
     main()
 
+# end of file

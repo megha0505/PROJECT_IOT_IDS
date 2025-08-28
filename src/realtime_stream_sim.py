@@ -1,4 +1,5 @@
 
+# This .py file takes 15 minutes to run.
 # Simulated realtime streaming for IoT IDS (enhanced logging)
 # - Streams the processed parquet in chunks
 # - Uses your trained model bundle (joblib) with preprocessor
@@ -170,7 +171,7 @@ def main():
             **tops
         })
 
-        # Optional: save top-N alert rows by score (pred=1)
+        # save top-N alert rows by score (pred=1)
         if alerts_rows is not None and preds.sum() > 0:
             topN = args.top_alerts_per_chunk
             sel = np.where(preds == 1)[0]
@@ -209,7 +210,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-
+# THIS CODE SHOULD RUN IN POWERSHELL
 """cd C:\PROJECT_IOT_IDS
 .\.venv\Scripts\activate
 
